@@ -9,3 +9,16 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Book {
+    id                String   @id @default(uuid())
+    createdAt         DateTime @default(now())
+    updatedAt         DateTime @updatedAt
+    title             String   @db.VarChar(100)
+    details           String   @db.Text()
+    publishYear       Int      @db.Integer()
+    author            String   @db.VarChar(60)
+    publishingCompany String   @db.VarChar(60)
+    isbn              String   @db.VarChar(20)
+    quantityInStock   Int      @db.Integer()
+}
