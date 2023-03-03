@@ -1,7 +1,7 @@
 {
   "name": "library-on",
   "version": "1.0.0",
-  "description": "Library-on API para o aluguel de livros",
+  "description": "Books rental API",
   "main": "index.js",
   "scripts": {
     "start": "nodemon"
@@ -26,3 +26,4 @@
     "typescript": "^4.9.5"
   }
 }
+
