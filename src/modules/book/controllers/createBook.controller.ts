@@ -5,9 +5,9 @@ import ICreateBookRequestDTO from "../dtos/createBookRequest.dto";
 
 export default class CreateBookController extends Controller {
   async handle(request: Request, response: Response) {
-    const createBookService = new CreateBookService();
+    const service = new CreateBookService();
     const requestData: ICreateBookRequestDTO = request.body;
-    const data = await createBookService.execute(requestData);
+    const data = await service.execute(requestData);
     return response.json(data);
   }
 }

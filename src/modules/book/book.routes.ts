@@ -1,13 +1,13 @@
 import {Router} from "express";
 import CreateBookController from "./controllers/createBook.controller";
+import ShowBooksController from "./controllers/showBooks.controller";
 
 const bookRouter = Router();
 
 const createBookController = new CreateBookController();
+const showBooksController = new ShowBooksController();
 
-bookRouter.get("/", (request, response) => {
-  response.send("<h1>Hello World</h1>");
-});
+bookRouter.get("/", showBooksController.handle);
 
 bookRouter.post("/", createBookController.handle);
 
