@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "Book" ALTER COLUMN "details" DROP NOT NULL,
+ALTER COLUMN "publishYear" DROP NOT NULL,
+ALTER COLUMN "publishingCompany" DROP NOT NULL,
+ALTER COLUMN "quantityInStock" SET DEFAULT 0;
