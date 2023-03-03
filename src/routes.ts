@@ -1,9 +1,9 @@
 import {Router} from "express";
 
-const routes = Router();
+const routerMapper = Router();
 
-routes.get("/", (request, response) => {
+routerMapper.get("/", (request, response) => {
   response.send("<h1>Hello World</h1>");
 });
 
-export default routes;
+export {routerMapper};
