@@ -11,14 +11,36 @@ datasource db {
 }
 
 model Book {
-    id                String   @id @default(uuid())
-    createdAt         DateTime @default(now())
-    updatedAt         DateTime @updatedAt
-    title             String   @db.VarChar(100)
-    details           String   @db.Text()
-    publishYear       Int      @db.Integer()
-    author            String   @db.VarChar(60)
-    publishingCompany String   @db.VarChar(60)
-    isbn              String   @db.VarChar(20)
-    quantityInStock   Int      @db.Integer()
+    id                String     @id @default(uuid())
+    createdAt         DateTime   @default(now())
+    updatedAt         DateTime   @updatedAt
+    title             String     @db.VarChar(100)
+    details           String     @db.Text()
+    publishYear       Int        @db.Integer()
+    author            String     @db.VarChar(60)
+    publishingCompany String     @db.VarChar(60)
+    isbn              String     @db.VarChar(20)
+    quantityInStock   Int        @db.Integer()
+    usersWhoRented    bookRent[]
+}
+
+model User {
+    id          String     @id @default(uuid())
+    createdAt   DateTime   @default(now())
+    updatedAt   DateTime   @updatedAt
+    name        String     @db.VarChar(50)
+    email       String     @db.VarChar(150)
+    password    String     @db.VarChar(255)
+    isAdmin     Boolean    @default(false) @db.Boolean()
+    rentedBooks bookRent[]
+}
+
+model bookRent {
+    id       String   @id @default(uuid())
+    rentedIn DateTime @default(now())
+    giveBack DateTime
+    user     User     @relation(fields: [userId], references: [id])
+    userId   String
+    book     Book     @relation(fields: [bookId], references: [id])
+    bookId   String
 }
