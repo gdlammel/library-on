@@ -12,17 +12,17 @@
 
 ### Features
 
--   [] Cadastrar um novo livro
--   [] Editar as informações de um livro
--   [] Deletar um livro
--   [] Criação do usuário ADMIN
--   [] Criação dos usuários locatários
--   [] Autenticação e autorização dos usuários
--   [] Alugar um livro
+- [ ] Cadastrar um novo livro
+- [ ] Editar as informações de um livro
+- [ ] Deletar um livro
+- [ ] Criação do usuário ADMIN
+- [ ] Criação dos usuários locatários
+- [ ] Autenticação e autorização dos usuários
+- [ ] Alugar um livro
 
 ### Tecnologias
 
--   Node.js com Typescript
--   Express (Framework)
--   Prisma.io (ORM)
--   PostgresSQL (Banco de dados)
+- Node.js com Typescript
+- Express (Framework)
+- Prisma.io (ORM)
+- PostgresSQL (Banco de dados)
