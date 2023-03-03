@@ -1,9 +1,8 @@
 import {Router} from "express";
+import bookRouter from "./modules/book/book.routes";
 
 const routerMapper = Router();
 
-routerMapper.get("/", (request, response) => {
-  response.send("<h1>Hello World</h1>");
-});
+routerMapper.use("/books", bookRouter);
 
 export {routerMapper};
