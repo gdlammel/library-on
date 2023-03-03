@@ -1,4 +1,4 @@
-export default interface IRequestDTO {
+export default interface ICreateBookRequestDTO {
   title: string;
   details: string;
   publishYear: number;

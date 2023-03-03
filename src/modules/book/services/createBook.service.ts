@@ -1,10 +1,10 @@
 import Service from "../../../shared/service";
-import IRequestDTO from "../dtos/request.dto";
+import ICreateBookRequestDTO from "../dtos/createBookRequest.dto";
 import prisma from "../../../shared/prisma";
 import CustomError from "../../../shared/customError";
 
 export default class CreateBookService extends Service {
-  async execute(data: IRequestDTO) {
+  async execute(data: ICreateBookRequestDTO) {
     if (!data.title || !data.author || !data.isbn) {
       throw new CustomError({
         status: 400,
