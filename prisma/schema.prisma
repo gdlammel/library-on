@@ -19,7 +19,7 @@ model Book {
     publishYear       Int?       @db.Integer()
     author            String     @db.VarChar(60)
     publishingCompany String?    @db.VarChar(60)
-    isbn              String     @db.VarChar(20)
+    isbn              String     @unique @db.VarChar(20)
     quantityInStock   Int        @default(0) @db.Integer()
     usersWhoRented    bookRent[]
 }
