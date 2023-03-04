@@ -13,7 +13,7 @@ const booksReturnInformations = {
 
 export default class ShowBooksService extends Service {
   async execute(searchInfo: string) {
-    const book = await prisma.book.findFirst({
+    const book = await prisma.book.findUnique({
       where: {
         isbn: searchInfo,
       },
