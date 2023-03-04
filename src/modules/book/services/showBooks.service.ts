@@ -1,5 +1,5 @@
 import prisma from "../../../shared/prisma";
-import Service from "../../../shared/service";
+import Service from "../../../shared/abstract_classes/service";
 
 const booksReturnInformations = {
   id: true,

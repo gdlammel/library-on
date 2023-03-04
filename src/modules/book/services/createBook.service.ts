@@ -1,4 +1,4 @@
-import Service from "../../../shared/service";
+import Service from "../../../shared/abstract_classes/service";
 import ICreateBookRequestDTO from "../dtos/createBookRequest.dto";
 import prisma from "../../../shared/prisma";
 import CustomError from "../../../shared/customError";

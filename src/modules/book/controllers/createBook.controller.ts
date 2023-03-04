@@ -1,4 +1,4 @@
-import Controller from "../../../shared/controller";
+import Controller from "../../../shared/abstract_classes/controller";
 import {Request, Response} from "express";
 import CreateBookService from "../services/createBook.service";
 import ICreateBookRequestDTO from "../dtos/createBookRequest.dto";

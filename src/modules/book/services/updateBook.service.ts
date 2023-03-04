@@ -1,6 +1,6 @@
 import CustomError from "../../../shared/customError";
 import prisma from "../../../shared/prisma";
-import Service from "../../../shared/service";
+import Service from "../../../shared/abstract_classes/service";
 import IUpdateBookRequestDTO from "../dtos/updateBookRequest.dto";
 
 export default class UpdateBookService extends Service {

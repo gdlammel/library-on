@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
 import {ParamsDictionary} from "express-serve-static-core";
 import {ParsedQs} from "qs";
-import Controller from "../../../shared/controller";
+import Controller from "../../../shared/abstract_classes/controller";
 import IUpdateBookRequestDTO from "../dtos/updateBookRequest.dto";
 import UpdateBookService from "../services/updateBook.service";
 
