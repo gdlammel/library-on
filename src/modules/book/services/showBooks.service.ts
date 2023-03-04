@@ -13,6 +13,10 @@ const booksReturnInformations = {
 
 export default class ShowBooksService extends Service {
   async execute(searchInfo: string) {
+    if (!searchInfo) {
+      const allBooks = await prisma.book.findMany();
+      return allBooks;
+    }
     const book = await prisma.book.findUnique({
       where: {
         isbn: searchInfo,
