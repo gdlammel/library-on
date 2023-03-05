@@ -15,8 +15,8 @@
 - [x] Cadastrar um novo livro
 - [x] Editar as informações de um livro
 - [x] Deletar um livro
-- [ ] Criação do usuário ADMIN
-- [ ] Criação dos usuários locatários
+- [x] Criação do usuário ADMIN
+- [x] Criação dos usuários locatários
 - [ ] Autenticação e autorização dos usuários
 - [ ] Alugar um livro
 
