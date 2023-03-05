@@ -17,7 +17,7 @@
 - [x] Deletar um livro
 - [x] Criação do usuário ADMIN
 - [x] Criação dos usuários locatários
-- [ ] Autenticação e autorização dos usuários
+- [x] Autenticação e autorização dos usuários
 - [ ] Alugar um livro
 
 ### Tecnologias
