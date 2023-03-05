@@ -4,7 +4,8 @@
   "description": "Books rental API",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "db:seed": "ts-node prisma/seed.ts"
   },
   "keywords": [],
   "author": "Guilherme Duarte",
