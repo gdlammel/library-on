@@ -18,8 +18,7 @@ const ensureAdmin = new EnsureAdmin();
 
 bookRouter.get("/", ensureAuthenticated.handle, showBooksController.handle);
 
-bookRouter.use(ensureAuthenticated.handle);
-bookRouter.use(ensureAdmin.handle);
+bookRouter.use(ensureAuthenticated.handle, ensureAdmin.handle);
 
 bookRouter.post("/", createBookController.handle);
 bookRouter.put("/:id", updateBookController.handle);
