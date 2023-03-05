@@ -1,4 +1,6 @@
 import {Router} from "express";
+import EnsureAdmin from "../../shared/middlewares/ensureAdmin.middleware";
+import EnsureAuthenticated from "../../shared/middlewares/ensureAuthenticated.middleware";
 import CreateBookController from "./controllers/createBook.controller";
 import DeleteBookController from "./controllers/deleteBook.controler";
 import ShowBooksController from "./controllers/showBooks.controller";
@@ -11,7 +13,14 @@ const showBooksController = new ShowBooksController();
 const updateBookController = new UpdateBookController();
 const deleteBookController = new DeleteBookController();
 
-bookRouter.get("/", showBooksController.handle);
+const ensureAuthenticated = new EnsureAuthenticated();
+const ensureAdmin = new EnsureAdmin();
+
+bookRouter.get("/", ensureAuthenticated.handle, showBooksController.handle);
+
+bookRouter.use(ensureAuthenticated.handle);
+bookRouter.use(ensureAdmin.handle);
+
 bookRouter.post("/", createBookController.handle);
 bookRouter.put("/:id", updateBookController.handle);
 bookRouter.delete("/:id", deleteBookController.handle);
