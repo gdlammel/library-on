@@ -4,6 +4,7 @@ import {ParsedQs} from "qs";
 import Middleware from "../abstract_classes/middleware";
 import CustomError from "../customError";
 import {verify} from "jsonwebtoken";
+import jwtConfig from "../../configurations/jwt.config";
 
 interface IPayload {
   sub: string;
@@ -21,7 +22,7 @@ export default class EnsureAuthenticated implements Middleware {
     }
     const [_, token] = authToken.split(" ");
     try {
-      const {sub} = verify(token, process.env.JWT_SECRET as string) as IPayload;
+      const {sub} = verify(token, jwtConfig.secret as string) as IPayload;
       request.loggedUser = sub;
       return next();
     } catch (error) {

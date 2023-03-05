@@ -3,6 +3,8 @@ import CustomError from "../../../shared/customError";
 import prisma from "../../../shared/prisma";
 import ICreateUserRequestDTO from "../dtos/createUserRequest.dto";
 import {hash} from "bcrypt";
+import {sign} from "jsonwebtoken";
+import jwtConfig from "../../../configurations/jwt.config";
 
 export default class CreateUserService implements Service {
   async execute(data: ICreateUserRequestDTO) {
@@ -36,12 +38,15 @@ export default class CreateUserService implements Service {
           password: encryptedPassword,
         },
         select: {
-          name: true,
-          email: true,
+          id: true,
         },
       });
+      const token = sign({info: newUser.id}, jwtConfig.secret, {
+        subject: newUser.id,
+        expiresIn: jwtConfig.expiresIn,
+      });
 
-      return newUser;
+      return token;
     } catch (error) {
       throw new CustomError({
         status: 400,
