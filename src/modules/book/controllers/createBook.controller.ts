@@ -3,7 +3,7 @@ import {Request, Response} from "express";
 import CreateBookService from "../services/createBook.service";
 import ICreateBookRequestDTO from "../dtos/createBookRequest.dto";
 
-export default class CreateBookController extends Controller {
+export default class CreateBookController implements Controller {
   async handle(request: Request, response: Response) {
     const service = new CreateBookService();
     const requestData: ICreateBookRequestDTO = request.body;

@@ -3,7 +3,7 @@ import prisma from "../../../shared/prisma";
 import Service from "../../../shared/abstract_classes/service";
 import IUpdateBookRequestDTO from "../dtos/updateBookRequest.dto";
 
-export default class UpdateBookService extends Service {
+export default class UpdateBookService implements Service {
   async execute(id: string, data: IUpdateBookRequestDTO) {
     if ("isbn" in data) {
       const isbnAlreadyExists = await prisma.book.findUnique({

@@ -3,7 +3,7 @@ import ICreateBookRequestDTO from "../dtos/createBookRequest.dto";
 import prisma from "../../../shared/prisma";
 import CustomError from "../../../shared/customError";
 
-export default class CreateBookService extends Service {
+export default class CreateBookService implements Service {
   async execute(data: ICreateBookRequestDTO) {
     if (!data.title || !data.author || !data.isbn) {
       throw new CustomError({

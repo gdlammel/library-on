@@ -5,7 +5,7 @@ import Controller from "../../../shared/abstract_classes/controller";
 import IUpdateBookRequestDTO from "../dtos/updateBookRequest.dto";
 import UpdateBookService from "../services/updateBook.service";
 
-export default class UpdateBookController extends Controller {
+export default class UpdateBookController implements Controller {
   async handle(
     request: Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>,
     response: Response<any, Record<string, any>>

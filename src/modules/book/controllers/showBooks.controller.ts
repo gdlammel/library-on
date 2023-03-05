@@ -4,7 +4,7 @@ import {ParsedQs} from "qs";
 import Controller from "../../../shared/abstract_classes/controller";
 import ShowBooksService from "../services/showBooks.service";
 
-export default class ShowBooksController extends Controller {
+export default class ShowBooksController implements Controller {
   async handle(
     request: Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>,
     response: Response<any, Record<string, any>>

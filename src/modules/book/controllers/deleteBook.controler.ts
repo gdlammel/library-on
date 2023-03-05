@@ -4,7 +4,7 @@ import {ParsedQs} from "qs";
 import Controller from "../../../shared/abstract_classes/controller";
 import DeleteBookService from "../services/deleteBook.service";
 
-export default class DeleteBookController extends Controller {
+export default class DeleteBookController implements Controller {
   async handle(
     request: Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>,
     response: Response<any, Record<string, any>>

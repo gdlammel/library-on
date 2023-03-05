@@ -11,7 +11,7 @@ const booksReturnInformations = {
   publishYear: true,
 };
 
-export default class ShowBooksService extends Service {
+export default class ShowBooksService implements Service {
   async execute(searchInfo: string) {
     if (!searchInfo) {
       const allBooks = await prisma.book.findMany();
