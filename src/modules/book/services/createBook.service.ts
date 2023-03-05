@@ -11,6 +11,18 @@ export default class CreateBookService extends Service {
         message: "Information is missing",
       });
     }
+    const isbnAlreadyExists = await prisma.book.findUnique({
+      where: {
+        isbn: data.isbn,
+      },
+    });
+
+    if (isbnAlreadyExists) {
+      throw new CustomError({
+        status: 400,
+        message: "Isbn already registered",
+      });
+    }
 
     try {
       const newBook = await prisma.book.create({
