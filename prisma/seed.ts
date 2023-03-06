@@ -4,17 +4,19 @@ async function main() {
   await prisma.user.create({
     data: {
       name: "admin",
-      email: "admin@admin.com",
-      password: "123",
+      email: "admin@ad23min.com",
+      password: "$2b$08$AANVX./JWlp.u1ukVZXYKe7MTETPzz7RWSeU3iWxVX6D1HTqhfooy",
       role: "ADMIN",
     },
   });
 }
 
 main()
-  .catch((e) => {
-    process.exit(1);
-  })
-  .finally(async () => {
+  .then(async () => {
     await prisma.$disconnect();
+  })
+  .catch(async (e) => {
+    console.error(e);
+    await prisma.$disconnect();
+    process.exit(1);
   });
