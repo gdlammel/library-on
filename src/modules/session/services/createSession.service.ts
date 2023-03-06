@@ -24,12 +24,12 @@ export default class CreateSessionService implements Service {
       if (!user) {
         throw new Error();
       }
-      const passwordMatch = compare(data.password, user.password);
+      const passwordMatch = await compare(String(data.password), user.password);
 
       if (!passwordMatch) {
         throw new Error();
       }
-      const token = sign(user.id, jwtConfig.secret, {
+      const token = sign({id: user.id}, jwtConfig.secret, {
         subject: user.id,
         expiresIn: jwtConfig.expiresIn,
       });
